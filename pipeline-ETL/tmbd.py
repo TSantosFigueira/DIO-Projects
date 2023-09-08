@@ -36,7 +36,7 @@ print(df_genres.head())
 
 df_columns = ['budget', 'genres', 'id', 'imdb_id', 'original_title', 'release_date', 'revenue', 'runtime']
 df_genres_column = df_genres['name'].tolist()
-df.columns.extend(df_genres_column)
+df_columns.extend(df_genres_column)
 
 s = df['genres_all'].explode()
 df = df.join(pd.crosstab(s.index, s))
